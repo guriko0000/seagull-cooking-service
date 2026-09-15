@@ -1,0 +1,49 @@
+@use "../global/index" as *;
+
+/* -------------------------------------
+        l-grid
+-----------------------------------------*/
+.l-grid {
+  display: grid;
+  // display: flex;
+  // flex-wrap: wrap;
+  gap: 40px 50px;
+  @include mq(md) {
+    gap: 30px;
+  }
+}
+
+// col2
+// .l-grid--col2 > .l-grid__item {
+//   width: calc(50% - 25px);
+//   @include mq(md) {
+//     width: 100%;
+//   }
+// }
+
+.l-grid--col2 {
+  grid-template-columns: repeat(2, 1fr);
+  @include mq(md) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+
+// col3
+// .l-grid--col3 > .l-grid__item {
+//   width: calc(33.3333% - 100px / 3);
+//   @include mq(lg) {
+//     width: calc(50% - 28px);
+//   }
+//   @include mq(md) {
+//     width: 100%;
+//   }
+// }
+
+.l-grid--col3 {
+  grid-template-columns: repeat(3, 1fr);
+  @include mq(md) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

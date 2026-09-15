@@ -1,0 +1,39 @@
+@use "../../global/index" as *;
+
+/* -------------------------------------
+        c-header-btn
+-----------------------------------------*/
+.c-header-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  background-color: $main-color;
+  color: #fff;
+  font-weight: $bold;
+  letter-spacing: 0.03em;
+  padding: 16px 28px;
+  transition: 0.25s;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    mask: url(../img/icon/icon_cutlery.svg) no-repeat center/cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: background-color 0.25s;
+  }
+
+  &:hover, &:focus-visible {
+    background-color: #fff;
+    color: $main-color;
+
+    &::before {
+      background-color: $main-color;
+    }
+  }
+}

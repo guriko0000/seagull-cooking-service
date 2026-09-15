@@ -1,0 +1,139 @@
+@use "../../global/index" as *;
+
+/* -------------------------------------
+        fade
+-----------------------------------------*/
+// gsap
+// そのままフェードイン
+  .js-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s, transform 0.8s;
+
+    &.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  // 上から
+  .js-fadeUp {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s, transform 0.8s;
+
+    &.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  // 右から
+  .js-fadeRight {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.8s, transform 0.8s;
+
+    &.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+// そのままフェードイン
+// .fade{
+//   animation-name: fade;
+//   animation-duration:1.3s;
+//   animation-fill-mode:forwards;
+//   opacity:1;
+
+//   &--top {
+//     animation-fill-mode: none;
+//   }
+//   }
+  
+//   @keyframes fade{
+//   from {
+//   opacity: 0;
+//   }
+  
+//   to {
+//   opacity: 1;
+//   }
+//   }
+
+  /* 下から */
+// .fadeup{
+//   animation-name: fadeUpAnime;
+//   animation-duration:0.9s;
+//   animation-fill-mode:forwards;
+//   opacity:1;
+
+//   &--top {
+//     animation-fill-mode: none;
+//   }
+//   }
+  
+//   @keyframes fadeUpAnime{
+//   from {
+//   opacity: 0;
+//   transform: translateY(50px);
+//   }
+  
+//   to {
+//   opacity: 1;
+//   transform: translateY(0);
+//   }
+//   }
+  
+//   .fadeUpTrigger{
+//   opacity: 0;
+//   }
+  
+
+
+  /* 上から */
+// .fadeDown{
+//   animation-name:fadeDownAnime;
+//   animation-duration:1.3s;
+//   animation-fill-mode:forwards;
+//   opacity:0;
+//   }
+  
+//   @keyframes fadeDownAnime{
+//     from {
+//       opacity: 0;
+//       transform: translateY(-100px);
+//     }
+  
+//     to {
+//       opacity: 1;
+//       transform: translateY(0);
+//     }
+//   }
+
+
+
+  /* 右から */
+// .fadeRight{
+//   animation-name:fadeRightAnime;
+//   animation-duration:1s;
+//   animation-fill-mode:forwards;
+//   opacity:0;
+//   }
+  
+//   @keyframes fadeRightAnime{
+//     from {
+//       opacity: 0;
+//     transform: translateX(100px);
+//     }
+  
+//     to {
+//       opacity: 1;
+//     transform: translateX(0);
+//     }
+//   }
+
+//   .fadeRightTrigger {
+//     opacity: 0;
+//   }

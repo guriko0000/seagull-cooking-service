@@ -1,0 +1,103 @@
+@use "../../global/index" as *;
+
+/* -------------------------------------
+        c-pager
+-----------------------------------------*/
+.c-pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  @include mq(md) {
+    max-width: 378px;
+  }
+
+  &__prev, &__next {
+    position: relative;
+    max-width: 150px;
+    width: 100%;
+    height: 100%;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      border: 1px solid #7E7260;
+      border-radius: 4px;
+      letter-spacing: 0.1em;
+      padding: 5px 4px;
+      transition: 0.25s;
+      @include mq(md) {
+        font-size: 1.4rem;
+        padding: 7px 4px;
+      }
+
+      &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 12px;      
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      &:hover, &:focus-visible {
+        opacity: 0.7;
+      }
+    }
+
+    img {
+      display: inline-block;
+      width: 8px;
+    }
+  }
+
+  &__prev a{
+    &::before {
+      right: 11px;
+      background-image: url(../img/icon/icon_prev.svg);
+    }
+  }
+  &__next a{
+      &::before {
+        left: 11px;
+        background-image: url(../img/icon/icon_next.svg);
+      }
+  }
+
+  &__archive {
+    max-width: 95px;
+    width: 100%;
+    height: 100%;
+    margin: 0 8px;
+    @include mq(xs) {
+      max-width: 90px;
+      margin: 0 14px;
+    }
+    a {
+      display: inline-block;
+      width: 100%;
+      height: 41px;
+      border: 1px solid $main-color;
+      border-radius: 4px;
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 9px 4px;
+      transition: 0.2s;
+      @include mq(xs) {
+        font-size: 1.4rem;
+      }
+
+      &:hover, &:focus-visible {
+        opacity: 0.7;
+      }
+    }
+  }
+}

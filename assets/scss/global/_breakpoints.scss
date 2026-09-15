@@ -1,0 +1,24 @@
+@use "sass:map";
+
+//マップ型変数breakpointsを定義
+$breakpoints: (
+//キー値
+ 'xxs': 'screen and (max-width: 330px)',
+ 'xs': 'screen and (max-width: 360px)',
+ 'sm': 'screen and (max-width: 576px)',
+ 'md': 'screen and (max-width: 767px)',
+ 'lg': 'screen and (max-width: 992px)',
+ 'xl': 'screen and (max-width: 1200px)',
+ 'xxl': 'screen and (max-width: 1400px)',
+ 'header': 'screen and (max-width: 1140px)',
+ 'pc': 'screen and (min-width: 768px)'
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォ値はmd
+@mixin mq($breakpoint: md) {
+//map.get(マップ型変数, キー)で値を取得
+  @media #{map.get($breakpoints, $breakpoint)} {
+    //この中をカスタムできる
+    @content;
+  }
+}

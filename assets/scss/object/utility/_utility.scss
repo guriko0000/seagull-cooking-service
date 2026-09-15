@@ -1,0 +1,50 @@
+@use "../../global/index" as *;
+
+/* -------------------------------------
+        utility
+-----------------------------------------*/
+
+//デスクトップのみ表示
+.u-onliy-pc {
+  @include mq(md) {      
+    display: none;
+  }
+}
+
+//モバイルのみ表示
+.u-onliy-sp {
+  display: none;
+  @include mq(md) {
+    display: block;
+  }
+}
+
+//lg以下サイズのみ表示
+.u-onliy-tbsp {
+  display: none;
+  @include mq(lg) {
+    display: inline-block;
+  }
+}
+
+
+
+
+.u-pc-mt60 {
+  margin-top: 60px!important;
+}
+.u-pc-mt80 {
+  margin-top: 80px!important;
+}
+
+.u-text-accent-color {
+  color: $accent-color;
+}
+
+.u-border-bottom-none {
+  border-bottom-width: 0;
+}
+
+.u-bg-beige {
+  background-color: $main-bg;
+}

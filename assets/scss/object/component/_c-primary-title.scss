@@ -1,0 +1,63 @@
+@use "../../global/index" as *;
+
+/* -------------------------------------
+        c-primary-title
+-----------------------------------------*/
+.c-primary-title {
+  position: relative;
+  line-height: 1.4;
+  text-align: center;
+  z-index: 10;
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.6rem;
+    font-weight: $medium;
+    @include mq(md) {
+      font-size: 2.4rem;
+    }
+
+    &::before, &::after {
+      content: '';
+      display: inline-block;
+      width: 35px;
+      height: 20px;
+      background-image: url(../images/icon/icon_6color.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      @include mq(md) {
+        width: 25px;
+        height: 14px;
+      }
+    }
+
+    &::before {
+      margin-right: 20px;
+      @include mq(md) {
+        margin-right: 10px;
+      }
+    }
+    &::after {
+      margin-left: 20px;
+      @include mq(md) {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__sub {
+    display: inline-block;
+    color: $main-color;
+    font-family: $second-font-family;
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 5px;
+    @include mq(md) {
+      font-size: 1.2rem;
+    }
+  }
+
+}

@@ -1,0 +1,101 @@
+@use "../../global/index" as *;
+
+/* -------------------------------------
+        c-btn
+-----------------------------------------*/
+.c-btn {
+  display: inline-block;
+  position: relative;
+  max-width: 293px;
+  width: 100%; 
+  border: 1px solid $main-color;
+  border-radius: 48px;
+  background-color: $main-color;
+  color: #fff;  
+  font-weight: $medium;
+  text-align: center;
+  transition: 0.25s;
+  z-index: 10;
+  padding: 14px 10px;
+  @include mq(md) {
+    font-size: 1.4rem;
+    max-width: 250px;
+    padding: 13px 8px;
+  }
+
+  &:hover, &:focus-visible {
+  .c-btn__icon path, .c-btn__link:focus .c-btn__icon path {
+    fill: #fff;
+    transition: fill 0.25s;
+  }
+  }
+
+  &__icon {
+    display: inline-block;
+    transform: translateY(1px);
+    max-width: 8px;
+    width: 100%;
+    margin-left: 8px;    
+
+    path {
+      transition: fill 0.25s;
+    }
+  }
+
+  // &::after {
+  //   content: '';
+  //   display: inline-block;
+  //   width: 8px;
+  //   height: 12px;
+  //   background-image: url(../images/icon/icon_arrow-right.svg);
+  //   background-size: contain;
+  //   background-repeat: no-repeat;
+  //   margin-left: 10px;
+  // }
+
+  &:hover, &:focus-visible {
+    background-color: #fff;
+    color: $main-color;
+  }
+}
+
+.c-btn--larg {
+  max-width: 340px;
+  font-size: 1.8rem;
+  @include mq(md) {
+    max-width: 300px;
+    font-size: 1.4rem;    
+  }
+}
+
+.c-btn--icon02 {
+  .c-btn__icon {
+    display: inline-block;
+    position: absolute;
+    top: 24%;
+    // transform: translateY(-50%);
+    right: 20px;
+    max-width: 31px;
+    width: 100%;
+    @include mq(md) {
+      top: 18%;      
+    }
+    @include mq(xs) {
+      right: 14px;
+    }
+  }
+}
+
+.c-btn--icon03 {
+  .c-btn__icon {
+    display: inline-block;
+    transform: translateY(2px);
+    margin-right: 7px;
+    max-width: 24px;
+    width: 100%;
+    @include mq(md) {
+      transform: translateY(4px);
+    }
+  } 
+}
+

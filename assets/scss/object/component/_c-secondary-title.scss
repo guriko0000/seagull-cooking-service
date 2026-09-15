@@ -1,0 +1,20 @@
+@use "../../global/index" as *;
+
+/* -------------------------------------
+        c-secondary-title
+-----------------------------------------*/
+.c-secondary-title {
+  background: linear-gradient(to right, $second-color, $main-color);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 2.8rem;
+  line-height: 1.4;
+  font-weight: $medium;
+  padding: 10px 20px;
+
+  @include mq(md) {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    padding: 12px 20px;
+  }
+}

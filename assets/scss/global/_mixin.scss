@@ -1,0 +1,11 @@
+// opacityのtransition
+@mixin opacity-transition($transition-time: 0.25s) {
+  transition: opacity $transition-time;
+}
+
+// ホバー時opacity
+@mixin hover-opacity($opacity: 0.7) {
+  &:hover, &:focus-visible {
+    opacity: $opacity;
+  }
+}

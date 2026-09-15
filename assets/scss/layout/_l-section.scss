@@ -1,0 +1,11 @@
+@use "../global/index" as *;
+
+/* -------------------------------------
+        l-section
+-----------------------------------------*/
+.l-section {
+  padding-top: 120px;
+  @include mq(md) {
+    padding-top: 80px;
+  }
+}

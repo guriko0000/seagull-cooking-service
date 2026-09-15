@@ -1,0 +1,77 @@
+@use "../../global/index" as *;
+
+/* -------------------------------------
+        c-icon-btn
+-----------------------------------------*/
+.c-icon-btn {
+  display: inline-block;
+  position: relative;
+  max-width: 211px;
+  width: 100%; 
+  border: 1px solid $second-color;
+  border-radius: 8px;
+  background-color: $second-color;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: $bold;
+  line-height: 1.5;
+  text-align: center;
+  padding: 14px 0.8em;
+  transition: all 0.25s;
+  z-index: 10;
+  &:hover, &:focus-visible {
+    background-color: #fff;
+    .c-icon-btn__text {
+      color: $second-color;
+      transition: all 0.25s;
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; 
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      // background-image: url(../img/icon/icon_mail.svg);
+      background: #fff;
+      mask: url(../img/icon/icon_mail.svg) no-repeat center/cover;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-right: 4px;
+    }
+  }
+
+  &:hover, &:focus-visible {
+    color: $main-color;
+    background-color: #fff;
+    transition: all 0.25s;
+
+    .c-icon-btn__text::before {
+      background-color: $second-color;
+      transition: all 0.25s;
+    }
+  }
+
+
+  &--post {
+    .c-icon-btn__text::before {
+      mask: url(../img/icon/icon_post.svg) no-repeat center/cover;
+    }
+  }
+
+  &--larg {
+    max-width: 300px;
+    // font-size: 2rem;
+    padding: 24px 0.1em;
+    @include mq(md) {
+      font-size: 1.6rem;
+    }
+  }
+
+}
+

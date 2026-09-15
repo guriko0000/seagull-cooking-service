@@ -1,0 +1,11 @@
+@use "../global/index" as *;
+
+/* -------------------------------------
+        l-main
+-----------------------------------------*/
+.l-main {
+  margin-top: 92px;
+  @include mq(md) {
+    margin-top: 60px;
+  }
+}

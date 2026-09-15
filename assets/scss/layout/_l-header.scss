@@ -1,0 +1,321 @@
+@use "../global/index" as *;
+
+/* -------------------------------------
+        l-header
+-----------------------------------------*/
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 92px;
+  background-color: $main-bg;
+  z-index: 20;
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
+  @include mq(md) {
+    height: 60px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-right: 60px;
+    padding-left: 60px;
+    margin: 0 auto;
+    @include mq(lg) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo a {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    z-index: 40;
+    &:hover, &:focus-visible {
+      opacity: 0.7;
+      transition: 0.3s;
+    }
+  }
+
+  &__logo-main {
+    display: block;
+    max-width: 312px;
+    width: 100%;
+    @include mq(md) {
+      max-width: 155px;
+      margin-right: 20px;
+    }
+  }
+
+  // &__logo-text {
+  //   color: #666;
+  //   font-size: 1.7rem;
+  // }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    @include mq(header) {
+      display: none;
+    }
+  }
+
+  &__tel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+  }
+
+  &__tel-link {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: $color-black02;
+    font-family: $third-font-family;
+    font-size: 2.2rem;
+    font-weight: $bold;
+    letter-spacing: 0.03em;
+    transition: 0.25s;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 18px;
+      background-color: $color-black02;
+      mask: url(../img/icon/icon_phone.svg) no-repeat center/cover;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: rotate(15deg);
+    }
+
+    &:hover, &:focus-visible {
+      opacity: $hover-opacity;
+    }
+  }
+
+  &__tel-note {
+    color: $color-gray01;
+    font-size: 1.4rem;
+    letter-spacing: 0.03em;
+  }
+}
+
+// ハンバーガーメニュー
+.c-hamburger-btn {
+  display: none;
+  touch-action: manipulation;
+  @include mq(header) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 39px;
+    height: 39px;
+    z-index: 20;
+    &:focus-visible {
+      outline: 2px solid #333;
+    }
+  }
+
+  button {
+    touch-action: manipulation;
+  }
+
+  &__inner {
+    display: block;
+    position: relative;
+    width: 17px;
+    height: 14px;
+    @include mq(md) {
+      width: 17px;
+      height: 14px;
+    }
+  }
+
+  &__line {
+    display: block;
+    position: absolute;
+    right: 0;
+    transition: .2s;
+    transform: translateY(0) rotate(0);
+    width: 100%;      
+
+    &::before {
+      content: "";
+      display: block;
+      height: 2px;
+      background-color: #222;
+      border-radius: 20px;
+    }
+
+    &:nth-of-type(1){
+      top: 0;
+    }
+
+    &:nth-of-type(2){
+      top: calc(50% - 1px);
+      right: 0;
+    }
+    &:nth-of-type(3){
+      bottom: 0;
+    }
+  }
+
+    // span:nth-of-type(1){
+    //   top: 0;
+    // }
+    // span:nth-of-type(2){
+    //   top: calc(50% - 1px);
+    //   right: 0;
+    // }
+    // span:nth-of-type(3){
+    //   bottom: 0;
+    // }
+  
+}
+
+// ハンバーガーメニュー内ナビ
+.p-sub-nav {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.15s;
+  margin-top: 100px;
+  @include mq(header) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    min-height: auto;
+    overflow-y: auto;
+    background-color: #f1f1f1;
+    transition: 0.15s;
+    z-index: 30;
+    @include mq(md) {
+      margin-top: 60px;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 200px;
+    z-index: 30;
+  }
+  
+  &__item {
+    position: relative;
+    max-width: 295px;
+    width: 100%;
+    border-top: 1px solid #4F546B;
+    margin: 0 auto;
+    cursor: pointer;
+    &:last-child {
+      border-bottom: 1px solid #4F546B;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    display: block;
+    text-align: center;
+    padding: 9px 0;
+  }
+
+  &__btn {
+    display: block;
+    max-width: 295px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #fff;
+    color: $main-color;
+    text-align: center;
+    padding: 22px 0;
+    margin: 0 auto;
+    &:hover, &:focus-visible {
+      background-color: $main-color;
+      border: 1px solid #FFF;
+      color: #fff;
+    }
+
+    &--line {
+      background-color: $main-color;
+      border: 1px solid #fff;
+      color: #fff;
+      &:hover, &:focus-visible {
+        background-color: #fff;
+        border: 1px solid #fff;
+        color: $main-color;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-top: 32px;
+    }
+  }
+
+  &__info {
+    position: relative;
+    max-width: 240px;
+    margin: 38px auto 0;
+    z-index: 20;
+  }
+
+  &__info-item {
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+}
+
+.l-header.active {
+
+  .c-hamburger-btn__line {
+    &:nth-of-type(1) {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+    &:nth-of-type(2) {
+      width: 0;
+      transition: .01s;
+    }
+    &:nth-of-type(3) {
+      width: 100%;
+      bottom: 50%;
+      transform: translateY(50%) rotate(-45deg);
+    }
+  }
+
+  .p-sub-nav {
+    @include mq(header) {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: 0.15s;  
+    }
+  }
+}

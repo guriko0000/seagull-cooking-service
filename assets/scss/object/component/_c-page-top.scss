@@ -1,0 +1,19 @@
+@use "../../global/index" as *;
+/* -------------------------------------
+      c-page-top  
+-----------------------------------------*/
+.c-page-top {
+  position: fixed;
+  display: none;
+  right: 20px;
+  bottom: 30px;
+  width: 57px;
+  height: 57px;
+  z-index: 10;
+  @include mq(md) {
+    width: 40px;
+    height: 40px;
+    right: 10px;
+    bottom: 40px;
+  }
+}

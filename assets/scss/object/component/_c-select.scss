@@ -1,0 +1,30 @@
+@use "../../global/index" as *;
+
+/* -------------------------------------
+        c-select
+-----------------------------------------*/
+.c-select {
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    width: 13px;
+    height: 13px;
+    background: url(../img/icon/icon_triangle.svg) no-repeat center / contain;
+  }
+
+  select {
+    width: 100%;
+    border: 1px solid #959595;
+    border-radius: 5px;
+    padding: 9px 15px;
+    color: #7F7F7F;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+
+}

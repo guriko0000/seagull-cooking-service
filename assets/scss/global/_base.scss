@@ -1,0 +1,249 @@
+@charset "UTF-8";
+
+// font
+@font-face {
+  font-family: 'Notosans_subset';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/NotoSans_Regular.woff2') format('woff2'),
+       url('../fonts/NotoSans_Regular.woff')  format('woff');
+}
+@font-face {
+  font-family: 'Notosans_subset';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/NotoSans_Medium.woff2') format('woff2'),
+       url('../fonts/NotoSans_Medium.woff')  format('woff');
+}
+@font-face {
+  font-family: 'Notosans_subset';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/NotoSans_Bold.woff2') format('woff2'),
+       url('../fonts/NotoSans_Bold.woff')  format('woff');
+}
+@font-face {
+  font-family: 'Notosans_subset';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../fonts/NotoSans_Black.woff2') format('woff2'),
+       url('../fonts/NotoSans_Black.woff')  format('woff');
+}
+
+/* roboto-regular - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('../fonts/roboto-v30-latin-regular.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('../fonts/roboto-v30-latin-regular.woff') format('woff'),
+    /* Modern Browsers */
+}
+
+
+/* roboto-200 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src:
+    url('../fonts/roboto-v30-latin-200.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('../fonts/roboto-v30-latin-200.woff') format('woff'),
+    /* Modern Browsers */
+}
+
+// /* roboto-italic - latin */
+// @font-face {
+//   font-family: 'Roboto';
+//   font-style: italic;
+//   font-weight: 400;
+//   font-display: swap;
+//   src:
+//     url('../fonts/roboto-v30-latin-italic.woff2') format('woff2'),
+//     /* Super Modern Browsers */
+//     url('../fonts/roboto-v30-latin-italic.woff') format('woff'),
+//     /* Modern Browsers */
+// }
+
+// /* roboto-500 - latin */
+// @font-face {
+//   font-family: 'Roboto';
+//   font-style: normal;
+//   font-weight: 500;
+//   font-display: swap;
+//   src:
+//     url('../fonts/roboto-v30-latin-500.woff2') format('woff2'),
+//     /* Super Modern Browsers */
+//     url('../fonts/roboto-v30-latin-500.woff') format('woff'),
+//     /* Modern Browsers */
+// }
+
+// /* roboto-500italic - latin */
+// @font-face {
+//   font-family: 'Roboto';
+//   font-style: italic;
+//   font-weight: 500;
+//   font-display: swap;
+//   src:
+//     url('../fonts/roboto-v30-latin-500italic.woff2') format('woff2'),
+//     /* Super Modern Browsers */
+//     url('../fonts/roboto-v30-latin-500italic.woff') format('woff'),
+//     /* Modern Browsers */
+// }
+
+/* roboto-700 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url('../fonts/roboto-v30-latin-700.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('../fonts/roboto-v30-latin-700.woff') format('woff'),
+    /* Modern Browsers */
+}
+
+// /* roboto-700italic - latin */
+// @font-face {
+//   font-family: 'Roboto';
+//   font-style: italic;
+//   font-weight: 700;
+//   font-display: swap;
+//   src:
+//     url('../fonts/roboto-v30-latin-700italic.woff2') format('woff2'),
+//     /* Super Modern Browsers */
+//     url('../fonts/roboto-v30-latin-700italic.woff') format('woff'),
+//     /* Modern Browsers */
+// }
+
+// /* roboto-900 - latin */
+// @font-face {
+//   font-family: 'Roboto';
+//   font-style: normal;
+//   font-weight: 900;
+//   font-display: swap;
+//   src:
+//     url('../fonts/roboto-v30-latin-900.woff2') format('woff2'),
+//     /* Super Modern Browsers */
+//     url('../fonts/roboto-v30-latin-900.woff') format('woff'),
+//     /* Modern Browsers */
+// }
+
+// /* roboto-900italic - latin */
+// @font-face {
+//   font-family: 'Roboto';
+//   font-style: italic;
+//   font-weight: 900;
+//   font-display: swap;
+//   src:
+//     url('../fonts/roboto-v30-latin-900italic.woff2') format('woff2'),
+//     /* Super Modern Browsers */
+//     url('../fonts/roboto-v30-latin-900italic.woff') format('woff'),
+//     /* Modern Browsers */
+// }
+
+// /* roboto-condensed-regular - latin */
+// @font-face {
+//   font-family: 'Roboto Condensed';
+//   font-style: normal;
+//   font-weight: 400;
+//   font-display: swap;
+//   src:
+//     url('../fonts/roboto-condensed-v25-latin-regular.woff2') format('woff2'),
+//     /* Super Modern Browsers */
+//     url('../fonts/roboto-condensed-v25-latin-regular.woff') format('woff'),
+//     /* Modern Browsers */
+// }
+
+// /* roboto-condensed-italic - latin */
+// @font-face {
+//   font-family: 'Roboto Condensed';
+//   font-style: italic;
+//   font-weight: 400;
+//   font-display: swap;
+//   src:
+//     url('../fonts/roboto-condensed-v25-latin-italic.woff2') format('woff2'),
+//     /* Super Modern Browsers */
+//     url('../fonts/roboto-condensed-v25-latin-italic.woff') format('woff'),
+//     /* Modern Browsers */
+// }
+
+// /* roboto-condensed-700 - latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url('../fonts/roboto-condensed-v25-latin-700.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('../fonts/roboto-condensed-v25-latin-700.woff') format('woff'),
+    /* Modern Browsers */
+}
+
+// /* roboto-condensed-700italic - latin */
+// @font-face {
+//   font-family: 'Roboto Condensed';
+//   font-style: italic;
+//   font-weight: 700;
+//   font-display: swap;
+//   src:
+//     url('../fonts/roboto-condensed-v25-latin-700italic.woff2') format('woff2'),
+//     /* Super Modern Browsers */
+//     url('../fonts/roboto-condensed-v25-latin-700italic.woff') format('woff'),
+//     /* Modern Browsers */
+// }
+
+
+
+// ----共通----
+
+html {
+  font-size: 62.5%;
+  // scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+
+body {
+  font-size: 1.6em;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+  // transition: all .6s ease;
+  color: inherit;
+}
+
+// a:hover {
+//   opacity: 0.8;
+// }
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+  height: auto;
+}
+
+:where(button, [type='button'], [type='reset'], [type='submit']) {
+  touch-action: manipulation;
+}
+
+textarea {
+  // field-sizing: content;
+  resize: both;
+}

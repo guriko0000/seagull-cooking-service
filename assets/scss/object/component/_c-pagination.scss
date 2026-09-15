@@ -1,0 +1,84 @@
+@use "../../global/index" as *;
+/* -------------------------------------
+        c-pagination
+-----------------------------------------*/
+.c-pagination {
+  display: flex;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+    position: relative;
+  }
+
+  li a {
+    transition: opacity 0.25s;
+    &:hover, &:focus {
+      opacity: 0.7;
+    }
+  }
+
+  li .page-numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    width: 40px;
+    height: 40px;
+    border: 1px solid $main-bg;
+    background-color: $main-bg;
+    border-radius: 4px;
+    font-family: $second-font-family;
+    line-height: 1;
+    margin: 3px;
+    @include mq(md) {
+      width: 30px;
+      height: 30px;
+      font-size: 1.3rem;
+    }
+  }
+
+  li .current {
+    background-color: $accent-color;
+    border: 1px solid $accent-color;
+    color: #fff;
+  }
+
+  li .prev, li .next {
+    border: none;
+  }
+
+  li .prev {
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 14px;      
+      background-image: url(../img/icon/icon_left.svg);
+      background-size: contain;
+      background-repeat: no-repeat;  
+      @include mq(md) {
+        width: 5px;
+        height: 12px;  
+      }
+    }
+  }
+
+  li .next {
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 14px;      
+      background-image: url(../img/icon/icon_right.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      @include mq(md) {
+        width: 5px;
+        height: 12px;  
+      }
+    }
+  }
+}

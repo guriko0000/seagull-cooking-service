@@ -1,0 +1,25 @@
+@use "../../global/index" as *;
+
+/* -------------------------------------
+        c-tags
+-----------------------------------------*/
+.c-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  &__item {
+    display: inline-block;
+    background-color: $main-bg;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    padding: 6px 8px;
+    transition: 0.25s;
+    &:hover, &:focus-visible {
+      color: $main-color;
+      border-color: $main-color;
+    }
+  }
+}

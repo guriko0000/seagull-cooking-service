@@ -1,0 +1,33 @@
+@use "../global/index" as *;
+
+// レイアウト幅
+$layout-width-inner: 1120px;
+$layout-width-inner-s: 900px;
+$layout-width-inner-l: 1200px;
+
+
+// 余白
+$padding-pc: 40px;
+$padding-sp: 20px;
+
+
+// インナー
+.l-inner {
+	max-width: $layout-width-inner + 80px;
+  padding-left: $padding-pc;
+  padding-right: $padding-pc;
+	margin: 0 auto;
+
+  &--s {
+    max-width: $layout-width-inner-s + 80px;
+  }
+  &--l {
+    max-width: $layout-width-inner-l + 80px;
+  }
+
+  @include mq(md) {
+    max-width: 600px!important;
+    padding-left: $padding-sp;
+    padding-right: $padding-sp;
+  }
+}

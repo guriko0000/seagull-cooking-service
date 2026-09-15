@@ -1,0 +1,82 @@
+@use "../../global/index" as *;
+
+/* -------------------------------------
+        c-card
+-----------------------------------------*/
+.c-card {
+  @include mq(pc) {  
+    &:hover, &:focus-visible {
+    .c-card__img img {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .c-card__title {
+      --d: 100%;
+      --p: 100%;
+      }
+    }
+  }
+
+  &__img {  
+    position: relative;
+    padding-top: 65%;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.3s;
+    z-index: 1;
+    @include mq(md) {
+      border-radius: 8px;
+    }
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    object-fit: cover;
+    transition: 0.3s;
+  }
+
+  &__body {
+    margin-top: 20px;
+    @include mq(md) {
+      margin-top: 5px;
+    }
+  }
+
+  &__date {
+    display: block;
+    color: #666;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    @include mq(md) {
+      margin-top: 10px;
+    }
+  }
+
+  &__title {
+    display: inline;
+    background: linear-gradient($main-color 0 0) var(--p, 0) 100% /var(--d, 0) 1px no-repeat;
+    transition: 0.3s, background-position 0s 0.3s;
+    margin-top: 5px;
+    @include mq(md) {
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+      margin-top: 3px;
+    }
+    @include mq(pc) {
+      &:hover, &:focus-visible {
+        --d: 100%;
+        --p: 100%;
+      }
+    }
+  }
+
+}

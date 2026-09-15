@@ -1,0 +1,21 @@
+@use "../../../global/index" as *;
+
+/* -------------------------------------
+        p-mv
+-----------------------------------------*/
+.p-mv {
+  position: relative;
+
+
+  &__inner {
+    position: relative;
+    // max-width: 1590px;
+    width: 100%;
+    padding: 0 100px;
+    margin: 0 auto;
+    @include mq(md) {
+      padding: 0 20px;
+    }
+  }
+
+}
