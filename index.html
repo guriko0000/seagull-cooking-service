@@ -22,6 +22,7 @@
   <!-- <script src="https://kit.fontawesome.com/39d42e1acb.js" crossorigin="anonymous"></script> -->
   <!-- Googleフォント -->
   <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://use.typekit.net/nsk5dpi.css">
   <!-- css -->
   <link rel="stylesheet" href="/assets/js/splide/splide.min.css">
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -35,7 +36,7 @@
       <div class="l-header__logo">
         <a href="/">
           <span class="l-header__logo-main">
-            <img class="l-header__logo-img" src="/assets/img/common/logo.png" alt="SEAGULL COOKING SERVICE" width="312" height="19">
+            <img class="l-header__logo-img" src="/assets/img/common/logo_img.png" alt="SEAGULL COOKING SERVICE" width="312" height="20">
           </span>
         </a>
       </div>
@@ -49,6 +50,7 @@
       </div>
       <!-- ハンバーガーメニュー -->
       <button class="c-hamburger-btn js-header-btn" aria-label="メニューボタン" aria-expanded="false">
+        <p class="c-hamburger-btn__text">MENU</p>
         <span class="c-hamburger-btn__inner">
           <span class="c-hamburger-btn__line"></span>
           <span class="c-hamburger-btn__line"></span>
@@ -62,60 +64,394 @@
       <div class="l-inner p-sub-nav__inner">
         <ul class="p-sub-nav__list js-header-nav">
           <li class="p-sub-nav__item">
-            <p class="p-sub-nav__title"><a class="p-sub-nav__link" href="/">Top</a></p>
+            <button class="p-sub-nav__label js-sub-nav-btn" type="button" aria-controls="sub-nav-panel-01" aria-expanded="false">サービス</button>
+            <div class="p-sub-nav__body" id="sub-nav-panel-01" aria-hidden="true">
+              <ul class="p-sub-nav__sub-list">
+                <li class="p-sub-nav__sub-item">
+                  <a class="p-sub-nav__sub-link" href="/about.html">社員食堂</a>
+                </li>
+                <li class="p-sub-nav__sub-item">
+                  <a class="p-sub-nav__sub-link" href="/about.html">ケータリング</a>
+                </li>
+                <li class="p-sub-nav__sub-item">
+                  <a class="p-sub-nav__sub-link" href="/about.html">OEM</a>
+                </li>
+                <li class="p-sub-nav__sub-item">
+                  <a class="p-sub-nav__sub-link" href="/about.html">出張料理<span class="p-sub-nav__tag">個人向け</span></a>
+                </li>
+              </ul>
+            </div>
           </li>
           <li class="p-sub-nav__item">
-            <p class="p-sub-nav__title"><a class="p-sub-nav__link" href="/about.html">テキスト</a></p>
+            <button class="p-sub-nav__label js-sub-nav-btn" type="button" aria-controls="sub-nav-panel-02" aria-expanded="false">ご検討中の方へ</button>
+            <div class="p-sub-nav__body" id="sub-nav-panel-02" aria-hidden="true">
+              <ul class="p-sub-nav__sub-list">
+                <li class="p-sub-nav__sub-item">
+                  <a class="p-sub-nav__sub-link" href="/about.html">社員食堂</a>
+                </li>
+                <li class="p-sub-nav__sub-item">
+                  <a class="p-sub-nav__sub-link" href="/about.html">ケータリング</a>
+                </li>
+                <li class="p-sub-nav__sub-item">
+                  <a class="p-sub-nav__sub-link" href="/about.html">OEM</a>
+                </li>
+                <li class="p-sub-nav__sub-item">
+                  <a class="p-sub-nav__sub-link" href="/about.html">出張料理<span class="p-sub-nav__tag">個人向け</span></a>
+                </li>
+              </ul>
+            </div>
           </li>
           <li class="p-sub-nav__item">
-            <p class="p-sub-nav__title"><a class="p-sub-nav__link" href="/about.html">テキスト</a></p>
-          </li>
-          <li class="p-sub-nav__item">
-            <p class="p-sub-nav__title"><a class="p-sub-nav__link" href="/about.html">テキスト</a></p>
-          </li>
-          <li class="p-sub-nav__item">
-            <p class="p-sub-nav__title"><a class="p-sub-nav__link" href="/about.html">テキスト</a></p>
-          </li>
-          <li class="p-sub-nav__item">
-            <p class="p-sub-nav__title"><a class="p-sub-nav__link" href="/contact.html">テキスト</a></p>
+            <button class="p-sub-nav__label js-sub-nav-btn" type="button" aria-controls="sub-nav-panel-03" aria-expanded="false">私たちについて</button>
+            <div class="p-sub-nav__body" id="sub-nav-panel-03" aria-hidden="true">
+              <ul class="p-sub-nav__sub-list">
+                <li class="p-sub-nav__sub-item">
+                  <a class="p-sub-nav__sub-link" href="/about.html">社員食堂</a>
+                </li>
+                <li class="p-sub-nav__sub-item">
+                  <a class="p-sub-nav__sub-link" href="/about.html">ケータリング</a>
+                </li>
+                <li class="p-sub-nav__sub-item">
+                  <a class="p-sub-nav__sub-link" href="/about.html">OEM</a>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
-
+        <div class="p-sub-nav__cta">
+          <a class="c-header-btn p-sub-nav__btn" href="/contact.html">試食会・お問い合わせ</a>
+          <p class="p-sub-nav__tel">
+            <a class="p-sub-nav__tel-link" href="tel:0369088679">03-6908-8679</a>
+            <span class="p-sub-nav__tel-note">平日 10:00-18:00</span>
+          </p>
+        </div>
       </div>
     </nav>
   </header>
   <main class="l-main">
     <section class="p-mv">
       <div class="p-mv__inner">
-
+        <div class="p-mv__content">
+          <div class="p-mv__copy">
+            <p class="p-mv__label">LIFE FOOD PARTNER</p>
+            <h1 class="p-mv__title">毎日手づくりの、<br>オフィスダイニング。</h1>
+            <p class="p-mv__text">オフィスに、毎日楽しみなランチを。<br>100〜1000食対応・HACCP管理。<br>自社シェフによる手づくりの食事。</p>
+            <a class="c-hero-btn p-mv__btn" href="/contact.html">試食会・お問い合わせ</a>
+          </div>
+          <div class="p-mv__photo-col">
+            <div class="p-mv__photo">
+              <picture>
+                <source media="(min-width: 768px)" srcset="/assets/img/top/mv_img.png" width="820" height="650">
+                <source media="(max-width: 767px)" srcset="/assets/img/top/mv_img-sp.png" width="360" height="270">
+                <img src="/assets/img/top/mv_img.png" alt="" width="820" height="650">
+              </picture>
+              <p class="p-mv__caption">出来立てを、そのままオフィスへ。</p>
+            </div>
+          </div>
+        </div>
+        <p class="p-mv__scroll">Scroll</p>
       </div>
     </section>
-    <section class="">
-      <div class="l-inner">
-      <dl class="c-accordion">
-        <div class="c-accordion__row">
-          <dt class="c-accordion__title">
-            <button class="c-accordion__btn js-accordion-btn" type="button" aria-controls="accordion-panel-01" aria-expanded="false">どんな教材を使うのでしょうか？</button></dt>
-          <dd class="c-accordion__body" id="accordion-panel-01" aria-hidden="true">
-            <p class="c-accordion__text">録音しても構いません。語学学習において、言語に触れている時間が長いほど早く上達します。ぜひご自宅での復習にお役立てください。<br>ただし、原則として第三者への配布は禁止しておりますので、ご了承ください。</p>
-          </dd>
+    <div class="l-container">
+      <div class="l-container__inner">
+        <div class="l-container__col2">
+          <aside class="p-side l-container__sub">
+            <div class="p-side__block">
+              <nav class="p-side__nav">
+                <p class="p-side__nav-title">サービス</p>
+                <ul class="p-side__nav-list">
+                  <li class="p-side__nav-item">
+                    <a class="p-side__nav-link" href="/about.html">社員食堂</a>
+                  </li>
+                  <li class="p-side__nav-item">
+                    <a class="p-side__nav-link" href="/about.html">ケータリング</a>
+                  </li>
+                  <li class="p-side__nav-item">
+                    <a class="p-side__nav-link" href="/about.html">OEM</a>
+                  </li>
+                  <li class="p-side__nav-item">
+                    <a class="p-side__nav-link" href="/about.html">出張料理<span class="p-side__badge">個人向け</span></a>
+                  </li>
+                </ul>
+              </nav>
+              <nav class="p-side__nav">
+                <p class="p-side__nav-title">ご検討中の方へ</p>
+                <ul class="p-side__nav-list">
+                  <li class="p-side__nav-item">
+                    <a class="p-side__nav-link" href="/about.html">料金</a>
+                  </li>
+                  <li class="p-side__nav-item">
+                    <a class="p-side__nav-link" href="/about.html">導入の流れ</a>
+                  </li>
+                  <li class="p-side__nav-item">
+                    <a class="p-side__nav-link" href="/about.html">今月の献立</a>
+                  </li>
+                </ul>
+              </nav>
+              <nav class="p-side__nav">
+                <p class="p-side__nav-title">私たちについて</p>
+                <ul class="p-side__nav-list">
+                  <li class="p-side__nav-item">
+                    <a class="p-side__nav-link" href="/about.html">会社案内</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="p-side__cta">
+                <a class="c-header-btn p-side__btn" href="/contact.html">試食会・お問い合わせ</a>
+                <p class="p-side__tel">
+                  <a class="p-side__tel-link" href="tel:0369088679">03-6908-8679</a>
+                  <span class="p-side__tel-note">平日 10:00-18:00</span>
+                </p>
+              </div>
+            </div>
+          </aside>
+          <section class="l-container__main">
+            <div class="p-number">
+              <div class="p-number__box-wrap">
+                <div class="p-number__box">
+                  <div class="p-number__box-head">
+                    <span class="p-number__icon">
+                      <picture>
+                        <source media="(min-width: 768px)" srcset="/assets/img/icon/icon_circle-service01.svg" width="56" height="56">
+                        <source media="(max-width: 767px)" srcset="/assets/img/icon/icon_service01.svg" width="20" height="20">
+                        <img src="/assets/img/icon/icon_service01.svg" alt="" width="56" height="56" loading="lazy">
+                      </picture>
+                    </span>
+                    <p class="p-number__label">月間提供食数</p>
+                  </div>
+                  <p class="p-number__num">約<span class="p-number__num-value">10,000</span>食</p>
+                </div>
+                <div class="p-number__box">
+                  <div class="p-number__box-head">
+                    <span class="p-number__icon">
+                      <picture>
+                        <source media="(min-width: 768px)" srcset="/assets/img/icon/icon_circle-service02.png" width="56" height="56">
+                        <source media="(max-width: 767px)" srcset="/assets/img/icon/icon_service02.svg" width="20" height="13">
+                        <img src="/assets/img/icon/icon_service02.png" alt="" width="56" height="56" loading="lazy">
+                      </picture>
+                    </span>
+                    <p class="p-number__label">年間ケータリング実績</p>
+                  </div>
+                  <p class="p-number__num"><span class="p-number__num-value">2,000</span>件以上</p>
+                </div>
+                <div class="p-number__box">
+                  <div class="p-number__box-head">
+                    <span class="p-number__icon">
+                      <picture>
+                        <source media="(min-width: 768px)" srcset="/assets/img/icon/icon_circle-service03.png" width="56" height="56">
+                        <source media="(max-width: 767px)" srcset="/assets/img/icon/icon_service03.svg" width="20" height="18">
+                        <img src="/assets/img/icon/icon_service03.png" alt="" width="56" height="56" loading="lazy">
+                      </picture>
+                    </span>
+                    <p class="p-number__label">最短導入期間</p>
+                  </div>
+                  <p class="p-number__num">約<span class="p-number__num-value">1</span>か月</p>
+                </div>
+              </div>
+            </div>
+            <section class="p-infra">
+              <div class="p-infra__content">
+                <div class="p-infra__text-area">
+                  <h2 class="p-infra__title">オフィスの毎日を支える<br>食のインフラ</h2>
+                  <p class="p-infra__text">毎日専門スタッフが献立を作成し、熟練シェフが手づくりする日替わりランチを、100〜1000食規模でお届け。<br>HACCP管理・アレルゲン/PFC表示で、美味しさと安心を両立した「毎日楽しみになる」社員食堂です。</p>
+                </div>
+                <div class="p-infra__map c-map">
+                  <img class="c-map__base" src="/assets/img/top/map-img.png" alt="" width="1240" height="1274">
+                  <svg class="c-map__routes" viewBox="0 0 620 637" aria-hidden="true">
+                    <path d="M190.5 217.5C179.5 99.9997 259 70.4998 292.5 90.9998" stroke="#ED8C3B" stroke-opacity="0.8" stroke-width="4" stroke-linecap="round" stroke-dasharray="4 10"></path>
+                    <path d="M192.5 217.287C160.5 106 69 108.5 52 132" stroke="#ED8C3B" stroke-opacity="0.8" stroke-width="4" stroke-linecap="round" stroke-dasharray="4 10"></path>
+                    <path d="M191 217.287C302.5 123 434.5 212.5 447.5 242.5" stroke="#ED8C3B" stroke-opacity="0.8" stroke-width="4" stroke-linecap="round" stroke-dasharray="4 10"></path>
+                    <path d="M191 217.287C259.5 81 462 98.9998 503 141" stroke="#ED8C3B" stroke-opacity="0.8" stroke-width="4" stroke-linecap="round" stroke-dasharray="4 10"></path>
+                    <path d="M191 217.287C263 170.5 340.5 232.5 348 279" stroke="#ED8C3B" stroke-opacity="0.8" stroke-width="4" stroke-linecap="round" stroke-dasharray="4 10"></path>
+                    <path d="M191 217.287C291 235.5 314 413 307.5 461" stroke="#ED8C3B" stroke-opacity="0.8" stroke-width="4" stroke-linecap="round" stroke-dasharray="4 10"></path>
+                    <path d="M191 217.287C110 237.5 84.5005 318.5 84.5 346.5" stroke="#ED8C3B" stroke-opacity="0.8" stroke-width="4" stroke-linecap="round" stroke-dasharray="4 10"></path>
+                  </svg>
+                  <img class="c-map__label" src="/assets/img/top/map-label.png" alt="" width="1240" height="1274">
+                </div>
+              </div>
+            </section>
+            <section class="p-top-service">
+              <div class="c-section-head">
+                <hgroup class="c-section-head__heading">
+                  <p class="c-section-head__label">サービス</p>
+                  <p class="c-section-head__en">Service</p>
+                </hgroup>
+                <p class="c-section-head__lead">株式会社シーガルは、社員食堂の運営を中心に、<br>ケータリング・OEM・出張料理まで、企業と人の「美味しい」を支える4つのサービスを展開しています。<br>いずれも自社のシェフが毎日手づくりでお料理をご提供します。</p>
+              </div>
+              <div class="p-top-service__content">
+                <div class="p-top-service__main-card">
+                  <a class="p-top-service__main-link" href="/about.html">
+                    <div class="p-top-service__main-img">
+                      <img src="/assets/img/top/service_img.jpg" alt="" width="498" height="320" loading="lazy">
+                    </div>
+                    <div class="p-top-service__main-body">
+                      <p class="p-top-service__main-title">社員食堂（SCS Office Dining）</p>
+                      <p class="p-top-service__main-text">毎日専門スタッフが献立を作成し、熟練シェフが手づくりする日替わりランチを、100〜1000食規模でお届け。<br>HACCP管理・アレルゲン/PFC表示で、美味しさと安心を両立した「毎日楽しみになる」社員食堂です。</p>
+                      <span class="p-top-service__main-chip" aria-hidden="true"></span>
+                    </div>
+                  </a>
+                </div>
+                <div class="p-top-service__cards">
+                  <div class="p-top-service__card">
+                    <a class="p-top-service__card-link" href="/about.html">
+                      <div class="p-top-service__card-img">
+                        <img src="/assets/img/top/service_img01.jpg" alt="" width="377" height="240" loading="lazy">
+                      </div>
+                      <div class="p-top-service__card-body">
+                        <p class="p-top-service__card-title">ケータリング</p>
+                        <p class="p-top-service__card-text">懇親会・イベント・接待に。<br>年間2,000件以上の実績。</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="p-top-service__card">
+                    <a class="p-top-service__card-link" href="/about.html">
+                      <div class="p-top-service__card-img">
+                        <img src="/assets/img/top/service_img02.jpg" alt="" width="377" height="240" loading="lazy">
+                      </div>
+                      <div class="p-top-service__card-body">
+                        <p class="p-top-service__card-title">OEM（ホテル等）</p>
+                        <p class="p-top-service__card-text">ホテル・施設向けの調理受託・<br>メニュー開発。</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="p-top-service__card">
+                    <a class="p-top-service__card-link" href="/about.html">
+                      <div class="p-top-service__card-img">
+                        <img src="/assets/img/top/service_img03.jpg" alt="" width="377" height="240" loading="lazy">
+                      </div>
+                      <div class="p-top-service__card-body">
+                        <p class="p-top-service__card-title">出張料理<span class="p-top-service__badge">個人向け</span></p>
+                        <p class="p-top-service__card-text">ご自宅・パーティーへ<br>シェフが伺います。</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="p-value">
+              <div class="p-value__content">
+                <div class="p-value__row">
+                  <div class="p-value__img p-value__img--01">
+                    <img src="/assets/img/top/value_bg01.png" alt="" width="233" height="233" loading="lazy">
+                  </div>
+                  <div class="p-value__head">
+                    <h2 class="p-value__title">社員食堂は福利厚生ではなく<br>企業価値を高める投資です</h2>
+                    <p class="p-value__lead">美味しい社員食堂は、社員の満足度だけでなく、<br>出社率・社内コミュニケーション・採用力にまで効果を発揮する経営投資です。<br>SCS Office Diningが企業にもたらす6つの価値をご紹介します。</p>
+                  </div>
+                  <div class="p-value__img p-value__img--02">
+                    <img src="/assets/img/top/value_bg02.png" alt="" width="227" height="277" loading="lazy">
+                  </div>
+                </div>
+                <div class="p-value__grid">
+                  <div class="p-value__card">
+                    <span class="p-value__card-icon">
+                      <img src="/assets/img/top/icon_value01.png" alt="" width="92" height="92" loading="lazy">
+                    </span>
+                    <div class="p-value__card-body">
+                      <p class="p-value__card-title">出社率向上</p>
+                      <p class="p-value__card-text">美味しい食事が、<br>出社したくなる理由に。</p>
+                    </div>
+                  </div>
+                  <div class="p-value__card">
+                    <span class="p-value__card-icon">
+                      <img src="/assets/img/top/icon_value02.png" alt="" width="92" height="92" loading="lazy">
+                    </span>
+                    <div class="p-value__card-body">
+                      <p class="p-value__card-title">コミュニケーション活性化</p>
+                      <p class="p-value__card-text">共に食事をする時間が<br>自然な会話を生む。</p>
+                    </div>
+                  </div>
+                  <div class="p-value__card">
+                    <span class="p-value__card-icon">
+                      <img src="/assets/img/top/icon_value03.png" alt="" width="92" height="92" loading="lazy">
+                    </span>
+                    <div class="p-value__card-body">
+                      <p class="p-value__card-title">健康経営・生産性向上</p>
+                      <p class="p-value__card-text">栄養バランスの取れた<br>食事が支える。</p>
+                    </div>
+                  </div>
+                  <div class="p-value__card">
+                    <span class="p-value__card-icon">
+                      <img src="/assets/img/top/icon_value04.png" alt="" width="92" height="92" loading="lazy">
+                    </span>
+                    <div class="p-value__card-body">
+                      <p class="p-value__card-title">採用ブランディング</p>
+                      <p class="p-value__card-text">福利厚生として<br>企業の魅力を高める。</p>
+                    </div>
+                  </div>
+                  <div class="p-value__card">
+                    <span class="p-value__card-icon">
+                      <img src="/assets/img/top/icon_value05.png" alt="" width="92" height="92" loading="lazy">
+                    </span>
+                    <div class="p-value__card-body">
+                      <p class="p-value__card-title">ランチ時間の有効活用</p>
+                      <p class="p-value__card-text">移動時間を減らし、<br>時間を価値ある業務へ。</p>
+                    </div>
+                  </div>
+                  <div class="p-value__card">
+                    <span class="p-value__card-icon">
+                      <img src="/assets/img/top/icon_value06.png" alt="" width="92" height="92" loading="lazy">
+                    </span>
+                    <div class="p-value__card-body">
+                      <p class="p-value__card-title">安心・安全</p>
+                      <p class="p-value__card-text">HACCP管理・<br>アレルゲン/PFC表示。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="p-works l-section">
+              <div class="c-section-head p-works__head">
+                <hgroup class="c-section-head__heading">
+                  <p class="c-section-head__label">導入実績</p>
+                  <p class="c-section-head__en">Works</p>
+                </hgroup>
+                <p class="c-section-head__lead">NOT A HOTEL本社の社員食堂運営をはじめ、<br>これまで数多くの企業様のランチやイベントにお料理をお届けしてきました。</p>
+              </div>
+              <div class="p-works__content">
+                <div class="p-works__feature">
+                  <figure class="p-works__feature-img">
+                    <img src="/assets/img/top/works_img01.jpg" alt="" width="480" height="287" loading="lazy">
+                  </figure>
+                  <div class="p-works__feature-body">
+                    <div class="p-works__feature-head">
+                      <p class="p-works__case">Case 01</p>
+                      <div class="p-works__feature-info">
+                        <div class="p-works__feature-title-group">
+                          <p class="p-works__feature-title">NOT A HOTEL 本社</p>
+                          <p class="p-works__feature-meta">2026年5月運営開始 ／ 平日毎日提供 ／ 200食規模</p>
+                        </div>
+                        <span class="p-works__feature-logo">
+                          <img src="/assets/img/top/works_img02.png" alt="NOT A HOTEL" width="130" height="70" loading="lazy">
+                        </span>
+                      </div>
+                    </div>
+                    <p class="p-works__feature-text">専任シェフによる日替わりランチを平日毎日提供。<br>社員の出社率向上とコミュニケーション活性化に貢献しています。</p>
+                  </div>
+                </div>
+                <div class="p-works__logos">
+                  <span class="p-works__logo"><img src="/assets/img/top/works_logo01.png" alt="野村證券" width="180" height="88" loading="lazy"></span>
+                  <span class="p-works__logo"><img src="/assets/img/top/works_logo02.png" alt="ITOCHU" width="180" height="88" loading="lazy"></span>
+                  <span class="p-works__logo"><img src="/assets/img/top/works_logo03.png" alt="鹿島建設" width="180" height="88" loading="lazy"></span>
+                  <span class="p-works__logo"><img src="/assets/img/top/works_logo04.png" alt="RECRUIT" width="180" height="88" loading="lazy"></span>
+                  <span class="p-works__logo"><img src="/assets/img/top/works_logo05.png" alt="dentsu" width="180" height="88" loading="lazy"></span>
+                  <span class="p-works__logo"><img src="/assets/img/top/works_logo06.png" alt="KOKUYO" width="180" height="88" loading="lazy"></span>
+                </div>
+              </div>
+            </section>
+
+
+          </section>
         </div>
-        <div class="c-accordion__row">
-          <dt class="c-accordion__title">
-            <button class="c-accordion__btn js-accordion-btn" type="button" aria-controls="accordion-panel-02" aria-expanded="false">講義中のレッスン内容は録音してもよいのでしょうか？</button></dt>
-          <dd class="c-accordion__body" id="accordion-panel-02" aria-hidden="true">
-            <p class="c-accordion__text">録音しても構いません。語学学習において、言語に触れている時間が長いほど早く上達します。ぜひご自宅での復習にお役立てください。<br>ただし、原則として第三者への配布は禁止しておりますので、ご了承ください。</p>
-          </dd>
-        </div>
-      </dl>
       </div>
-    </section>
+    </div>
 
 
 
 
 
-    </main>
+
+  </main>
   <!-- footer -->
   <footer class="l-footer">
     <div class="l-inner">

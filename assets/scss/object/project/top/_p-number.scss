@@ -1,0 +1,102 @@
+@use "../../../global/index" as *;
+
+/* -------------------------------------
+        p-number
+-----------------------------------------*/
+.p-number {
+
+  &__box-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    @include mq(md) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+      padding: 0 20px;
+    }
+  }
+
+  &__box {
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    padding: 26px 20px 20px;
+    @include mq(md) {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-radius: 0;
+      background-color: transparent;
+      box-shadow: none;
+      text-align: left;
+      padding: 20px 0;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #e5e5e5;
+      }
+    }
+  }
+
+  
+  &__box-head {
+    @include mq(md) {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  
+  &__icon {
+    flex-shrink: 0;
+    display: inline-block;
+    line-height: 1;
+    max-width: 56px;
+    @include mq(md) {
+      max-width: 20px;
+    }
+  }
+
+  &__label {
+    font-size: 1.8rem;
+    font-weight: $medium;
+    letter-spacing: 0.03em;
+    line-height: 1.5;
+    margin-top: 20px;
+    @include mq(md) {
+      font-size: 1.5rem;
+      margin-top: 0;
+    }
+  }
+
+  &__num {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+    font-size: 1.8rem;
+    font-weight: $medium;
+    letter-spacing: 0.03em;
+    margin-top: 10px;
+    @include mq(md) {
+      flex-shrink: 0;
+      gap: 2px;
+      font-size: 1.3rem;
+      margin: 0 0 0 auto;
+    }
+  }
+
+  &__num-value {
+    color: $main-color;
+    font-family: $third-font-family;
+    font-size: 5.4rem;
+    font-weight: $bold;
+    letter-spacing: 0.05em;
+    @include mq(md) {
+      font-size: 2.6rem;
+    }
+  }
+}

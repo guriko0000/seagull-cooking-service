@@ -24,6 +24,9 @@ $padding-sp: 20px;
   &--l {
     max-width: $layout-width-inner-l + 80px;
   }
+  &--full {
+    max-width: 100%;
+  }
 
   @include mq(md) {
     max-width: 600px!important;

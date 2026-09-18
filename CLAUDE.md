@@ -51,6 +51,8 @@
 ### 変数・mixin
 
 - カラーは変数を経由する。変数にない色は `_variable.scss` に追加してから使う。ハードコードは禁止
+- ただしグレー系（`#555`、`#777`など）は変数化せず、使用箇所に直接記述する
+- 変数を勝手に増やさない。グレー以外で既存変数に無い色が必要な場合は、追加前に確認する
 - mixin を定義した場合は必ず使う。使わない mixin は定義しない
 
 ### letter-spacing
@@ -124,6 +126,33 @@
 - アイコンの色反転は、可能な場合は基本的にCSSの `mask`（`mask: url(...) no-repeat center/cover;` + `background-color`）で実装する。`background-color` の切り替えだけでアイコン色を反転できるため、`<img>` の差し替えやSVGの `fill` 切り替えより優先する
 - Figma上でボタンのアイコンがテキストとは独立して配置されている（テキストの`gap`に含まれず、ボタン内の固定位置にある）場合は、アイコンをflexの`gap`で並べず、ボタン本体に `position: relative;` を付け、アイコン疑似要素側を `position: absolute;` でFigmaの実測オフセット（右端からの距離・垂直中央など）を基準に配置する
 
+#### ボタンのサイズ・paddingの決め方
+
+- ボタンの横幅は、Figmaの実寸を `max-width` で指定し、`width: 100%` で親に追従させる。`padding`を目一杯入れて幅を作らない
+- 横`padding`は「最低限確保したい余白」だけを指定し、余裕を持たせる。`justify-content: center;`で中央寄せすれば、最大幅時の見た目はFigma通りのまま、幅が縮んだときはpaddingではなく余白側から詰まる
+- Figmaの余白をそのまま横paddingに入れると、デバイス幅などでボタンが縮んだときにテキストが折り返して崩れるため禁止
+- アイコンの疑似要素には `flex-shrink: 0;` を付け、縮小時にアイコンが潰れてテキストが押し出されないようにする
+
+```scss
+.c-example-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 249px;
+  padding: 16px;
+
+  &::before {
+    content: '';
+    display: block;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+  }
+}
+```
+
 ```scss
 .c-example-btn {
   display: inline-flex;
@@ -159,6 +188,25 @@
     }
   }
 }
+```
+
+### リンク付きカード
+
+- リンクがあるカードは、矢印やタイトルだけをリンクにせず、カード全体をクリッカブルにする
+- カード要素（`__card`など）の直下に`<a>`を入れ、画像・テキストをまとめて包む
+- 矢印などのリンク装飾は、その`<a>`の`::before` / `::after`で実装する（リンクの入れ子を作らない）
+- ホバー時は画像だけを少し拡大する（`transform: scale(1.05);`）。カード自体は拡大しない
+- 画像の親要素に`overflow: hidden;`を指定し、拡大した画像が枠からはみ出さないようにする
+- 右下の矢印は円ごと少し右へ動かす（`transform: translateX(6px);`）
+- 画像の拡大・矢印の移動はどちらも`<a>`のホバーで指定し、`transition: transform 0.25s;`を併記する
+
+```html
+<div class="p-example__card">
+  <a class="p-example__card-link" href="">
+    <div class="p-example__card-img"><img src="" alt=""></div>
+    <div class="p-example__card-body"></div>
+  </a>
+</div>
 ```
 
 ### ナビ・テキストリンクのホバー
@@ -287,15 +335,40 @@ SCSSのプロパティは、原則として以下の順番で記述する。
 ### マージンの付け方
 
 - 要素間の余白は `margin-top` を基本とする。`margin-bottom` は使わない
-- 見出し要素の下に余白が必要な場合は、見出し自身に `margin-bottom` を付けず、`& + *` で直後の要素に `margin-top` を持たせる
+- `& + *` や `.p-example__text + *` のような隣接セレクタで次の要素に余白を付けない（禁止）
+- 余白は、余白を持つ要素自身のクラスに `margin-top` を指定する
+- `c-` コンポーネントに余白が必要な場合は、同じ要素にページ固有のクラス（例：`p-mv__btn`）を追加し、そちらに `margin-top` を指定する。`c-` 側にはページ固有の余白を持たせない
+- 唯一の例外として、タイトル（見出し）の下にデザイン上共通の余白が付く場合のみ、見出し側に `& + *` を使って直後の要素へ `margin-top` を持たせてよい
 
 ```scss
-.p-example__heading {
+.c-example-title {
   &+* {
     margin-top: 30px;
   }
 }
 ```
+
+```html
+<a class="c-example-btn p-example__btn" href="">テキスト</a>
+```
+
+```scss
+.p-example__title {
+  margin-top: 20px;
+}
+
+.p-example__btn {
+  margin-top: 40px;
+}
+```
+
+### レイアウトの配置方法（Figma座標の直転記禁止）
+
+- Figmaの`x`/`y`座標を、そのままCSSの`top`/`left`/`width`や、それらと等価なpadding・widthの数値に転記してレイアウトを組み立てない。これは`position: absolute`を使っているかどうかに関係なく、flexboxやGridで実装する場合でも同様に禁止（例：Figmaのx座標の差分を再現するためだけに`padding: 60px 98px 60px 91px;`のような非対称な値や、子要素の`width: 820px;`のようなFigma実測幅をそのまま置くのはNG）
+- 要素同士の配置は、`display: flex`（`gap`/`justify-content`/`flex`）やGridなど、通常のドキュメントフローと相対的なサイズ指定（`flex: 1`、`%`、`max-width`など）で組み立てる
+- コンテナ全体の基準幅・gutter・gapなど「設計上の定数」としてのpx値（例：`.l-header`の`max-width: 1600px`や`padding: 0 60px`）は、Figma座標の転記ではなく意図を持った基準値なので使ってよい
+- `position: absolute`は、装飾要素・バッジ・アイコン・中央寄せ（`left: 50%; transform: translateX(-50%);`など）といった、意図的に通常フローから外す局所的な用途に限定する
+- どうしても複数要素をFigmaの座標通りに重ねて配置する必要がある場合（写真コラージュなど）は、実装前に必ずユーザーに相談する
 
 ### Gridレイアウト
 
@@ -318,6 +391,8 @@ SCSSのプロパティは、原則として以下の順番で記述する。
 ### インナー幅ルール
 - コンテンツ幅は案件ごと・セクションごとにFigmaから読み取り、その値を基準にする
 - gapを調整した場合は、親幅を維持したまま子要素の幅をGridで均等に算出する
+- `__inner`は`.l-inner`と同じく「横幅の最大値・左右paddingによる中央寄せ」専用の要素とし、`display: flex`や`justify-content`などの並び順を決めるレイアウト指定を持たせない
+- `__inner`の直下の要素を横並び・縦並びにしたい場合は、`__inner`の中にさらに専用の親要素（例：`__content`）を作り、そこにflex/gridを指定する
 
 ### 画像ルール
 
@@ -326,7 +401,7 @@ SCSSのプロパティは、原則として以下の順番で記述する。
 - 切り取り位置・拡大率・トリミング範囲を自前で計算・推測しない
 - Figmaから画像を書き出す場合、ビットマップ画像は原則として表示サイズの2倍で書き出す
 - アイコン、ロゴ、単純な図形はSVGを使用する
-- 写真は原則WebPを使用する
+- 通常の写真は必ずJPGを使用する
 - 透過画像、イラスト、図版、作図などの非写真素材はPNGを使用する
 - SVGは2倍書き出し不要
 - 画像は`assets/img`配下へ保存し、既存の命名規則に合わせる

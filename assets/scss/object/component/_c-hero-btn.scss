@@ -1,30 +1,36 @@
 @use "../../global/index" as *;
 
 /* -------------------------------------
-        c-header-btn
+        c-hero-btn
 -----------------------------------------*/
-.c-header-btn {
+.c-hero-btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
   width: 100%;
-  max-width: 249px;
+  max-width: 287px;
   border: 1px solid $main-color;
   border-radius: 3px;
   background-color: $main-color;
   color: #fff;
   font-weight: $bold;
   letter-spacing: 0.03em;
-  padding: 16px;
+  padding: 18px 16px;
   transition: 0.25s;
+  @include mq(md) {
+    gap: 10px;
+    max-width: 100%;
+    font-size: 1.5rem;
+    padding: 15px 16px;
+  }
 
   &::before {
     content: '';
     display: block;
     flex-shrink: 0;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     background-color: #fff;
     mask: url(../img/icon/icon_cutlery.svg) no-repeat center/cover;
     background-size: contain;
@@ -32,11 +38,28 @@
     transition: background-color 0.25s;
   }
 
+  &::after {
+    content: '';
+    display: block;
+    flex-shrink: 0;
+    width: 12px;
+    height: 24px;
+    background-color: #fff;
+    mask: url(../img/icon/icon_right.svg) no-repeat center/cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 4px;
+    transition: background-color 0.25s;
+    @include mq(md) {
+      display: none;
+    }
+  }
+
   &:hover, &:focus-visible {
     background-color: #fff;
     color: $main-color;
 
-    &::before {
+    &::before, &::after {
       background-color: $main-color;
     }
   }

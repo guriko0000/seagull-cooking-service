@@ -1,0 +1,142 @@
+@use "../../../global/index" as *;
+
+/* -------------------------------------
+        p-side
+-----------------------------------------*/
+.p-side {
+  align-self: flex-start;
+  position: sticky;
+  top: 112px;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 7.5px rgba(0, 0, 0, 0.05);
+    padding: 40px 30px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__nav-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #e5e5e5;
+    font-weight: $medium;
+    letter-spacing: 0.03em;
+    padding-bottom: 10px;
+
+    &::before {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $accent-color;
+    }
+  }
+
+  &__nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: $medium;
+    letter-spacing: 0.03em;
+    padding: 14px 16px;
+
+    &::after {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      width: 12px;
+      height: 24px;
+      background-color: $color-black01;
+      mask: url(../img/icon/icon_right.svg) no-repeat center/cover;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-left: auto;
+      transition: transform 0.25s;
+    }
+
+    &:hover, &:focus-visible {
+      &::after {
+        transform: translateX(6px);
+      }
+    }
+  }
+
+  &__badge {
+    flex-shrink: 0;
+    border-radius: 2px;
+    background-color: $accent-color;
+    font-size: 1.2rem;
+    font-weight: $medium;
+    letter-spacing: 0.03em;
+    padding: 4px 8px;
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .p-side__btn {
+      max-width: 100%;
+
+      &::before {
+        width: 21px;
+        height: 21px;
+      }
+    }
+  }
+
+  &__tel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  &__tel-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: $second-font-family;
+    font-size: 1.7rem;
+    font-weight: $bold;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    transition: opacity 0.25s;
+
+    &::before {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      background-color: $color-black01;
+      mask: url(../img/icon/icon_phone.svg) no-repeat center/cover;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &:hover, &:focus-visible {
+      opacity: $hover-opacity;
+    }
+  }
+
+  &__tel-note {
+    color: #555;
+    font-size: 1.2rem;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+}

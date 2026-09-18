@@ -1,0 +1,71 @@
+@use "../../global/index" as *;
+
+/* -------------------------------------
+        c-section-head
+-----------------------------------------*/
+.c-section-head {
+  display: flex;
+  align-items: flex-end;
+  gap: 60px;
+  @include mq(md) {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  & + * {
+    margin-top: 60px;
+    @include mq(md) {
+      margin-top: 30px;
+    }
+  }
+
+  &__heading {
+    flex-shrink: 0;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: $bold;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    @include mq(md) {
+      font-size: 1.4rem;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      width: 20px;
+      height: 3px;
+      background-color: #ffe500;
+    }
+  }
+
+  &__en {
+    color: $second-color;
+    font-family: $second-font-family;
+    font-size: 7.2rem;
+    font-weight: $bold;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 15px;
+    @include mq(md) {
+      font-size: 4rem;
+      margin-top: 6px;
+    }
+  }
+
+  &__lead {
+    line-height: 2;
+    letter-spacing: 0.03em;
+    @include mq(md) {
+      font-size: 1.5rem;
+      line-height: 1.7;
+    }
+  }
+}

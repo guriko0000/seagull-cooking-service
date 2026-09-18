@@ -73,12 +73,28 @@ $(function() {
 });
 
 
+// ハンバーガーメニュー内アコーディオン
+// ________________________________________________________
+$(function() {
+  $(".js-sub-nav-btn").on("click", function() {
+    const content = $(this).next(".p-sub-nav__body"); // 開閉するサブ項目
+    const isExpanded = $(this).attr("aria-expanded") === "true";
+
+    $(this).attr("aria-expanded", !isExpanded);
+    content.attr("aria-hidden", isExpanded);
+
+    $(this).toggleClass("is-open");
+    content.slideToggle(300);
+  });
+});
+
+
 // header高さ引いてスムーススクロール
 // ________________________________________________________
 // 固定ヘッダー分リンク飛ばした時調整
   if(window.matchMedia("(max-width: 767px)").matches){
     $(function () {
-      var headerHight = 60;
+      var headerHight = 70;
       $('a[href^="#"]').click(function () {
       var href = $(this).attr("href");
       var target = $(href == "#" || href == "" ? "html" : href);
@@ -221,4 +237,21 @@ document.addEventListener("DOMContentLoaded", function () {
       suggestiveShadow: true,
     });
   }
+});
+
+
+
+
+
+
+
+
+
+
+
+gsap.to(".c-map__routes path", {
+  strokeDashoffset: -28,
+  duration: 1,
+  repeat: -1,
+  ease: "none"
 });
