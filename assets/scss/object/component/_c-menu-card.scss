@@ -1,0 +1,29 @@
+@use "../../global/index" as *;
+
+/* -------------------------------------
+        c-menu-card
+-----------------------------------------*/
+.c-menu-card {
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(20, 18, 10, 0.07);
+  overflow: hidden;
+
+  &__img {
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__body {
+    background-color: $main-bg;
+    padding: 15px 20px;
+  }
+
+  &__title {
+    font-weight: $medium;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    text-align: center;
+  }
+}

@@ -1,0 +1,38 @@
+@use "../../../global/index" as *;
+
+/* -------------------------------------
+        p-cta
+-----------------------------------------*/
+.p-cta {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/top/cta_bg.jpg) no-repeat center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 120px 0;
+
+  &__title {
+    font-size: 3.4rem;
+    font-weight: $bold;
+    line-height: 1.2;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 3px;
+      border-radius: 1.5px;
+      background-color: #ffe500;
+      margin: 14px auto 0;
+    }
+  }
+
+  &__text {
+    font-weight: $bold;
+    line-height: 2;
+    letter-spacing: 0.03em;
+    margin-top: 40px;
+  }
+
+  &__btn {
+    margin: 40px auto 0;
+  }
+}

@@ -5,4 +5,91 @@
 -----------------------------------------*/
 .l-footer {
 
+  &__inner {
+    max-width: 1240px;
+    padding: 80px 20px;
+    margin: 0 auto;
+  }
+
+  &__content {
+    display: flex;
+    gap: 80px;
+  }
+
+  &__company {
+    flex: 1;
+  }
+
+  &__logo {
+    display: block;
+    max-width: 262px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__address {
+    color: #787878;
+    font-size: 1.3rem;
+    line-height: 2;
+    letter-spacing: 0.03em;
+    margin-top: 20px;
+  }
+
+  &__navs {
+    display: flex;
+    gap: 80px;
+  }
+
+  &__nav-title {
+    font-weight: $bold;
+    letter-spacing: 0.03em;
+  }
+
+  &__nav-list {
+    margin-top: 16px;
+  }
+
+  &__nav-item {
+
+    &:first-child {
+      .l-footer__nav-link {
+        padding-top: 0;
+      }
+    }
+
+    &:last-child {
+      .l-footer__nav-link {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__nav-link {
+    display: block;
+    color: #787878;
+    font-size: 1.3rem;
+    letter-spacing: 0.03em;
+    padding: 6px 0;
+    transition: opacity 0.25s;
+
+    &:hover, &:focus-visible {
+      opacity: $hover-opacity;
+    }
+  }
+
+  &__copyright {
+    background-color: $color-black01;
+    padding: 20px 0;
+  }
+
+  &__copyright-text {
+    color: #fff;
+    font-family: $second-font-family;
+    font-size: 1.2rem;
+    font-weight: $medium;
+    letter-spacing: 0.03em;
+    text-align: center;
+  }
 }

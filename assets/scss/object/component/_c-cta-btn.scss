@@ -1,0 +1,60 @@
+@use "../../global/index" as *;
+
+/* -------------------------------------
+        c-cta-btn
+-----------------------------------------*/
+.c-cta-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid $main-bg;
+  border-radius: 3px;
+  background-color: rgba($main-bg, 0.9);
+  color: $color-black01;
+  font-weight: $bold;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  padding: 20px 44px 20px 30px;
+  transition: 0.25s;
+
+  &::before {
+    content: '';
+    display: block;
+    flex-shrink: 0;
+    width: 21px;
+    height: 21px;
+    background-color: $color-black01;
+    mask: url(../img/icon/icon_cutlery.svg) no-repeat center/cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: background-color 0.25s;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 24px;
+    background-color: $color-black01;
+    mask: url(../img/icon/icon_right.svg) no-repeat center/cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: background-color 0.25s;
+  }
+
+  &:hover, &:focus-visible {
+    background-color: transparent;
+    color: $main-bg;
+
+    &::before, &::after {
+      background-color: $main-bg;
+    }
+  }
+}

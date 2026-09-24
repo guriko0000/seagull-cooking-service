@@ -1,0 +1,24 @@
+@use "../../../global/index" as *;
+
+/* -------------------------------------
+        p-top-menu
+-----------------------------------------*/
+.p-top-menu {
+
+  &__content {
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 120px 50px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    margin-top: 40px;
+  }
+
+  &__btn {
+    margin: 40px auto 0;
+  }
+}

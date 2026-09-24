@@ -158,7 +158,10 @@ $(window).scroll(function (){
 });
 
 // コピーライト年数動的
-document.getElementById("current-year").innerText = new Date().getFullYear();
+const currentYear = document.getElementById("current-year");
+if (currentYear) {
+  currentYear.innerText = new Date().getFullYear();
+}
 
 // 319px以下スケーリング
 // ________________________________________________________
