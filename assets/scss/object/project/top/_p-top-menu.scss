@@ -9,6 +9,10 @@
     border-radius: 8px;
     background-color: #fff;
     padding: 120px 50px;
+    @include mq(md) {
+      border-radius: 0;
+      padding: 50px 20px;
+    }
   }
 
   &__cards {
@@ -16,9 +20,17 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 28px;
     margin-top: 40px;
+    @include mq(md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px 12px;
+      margin-top: 30px;
+    }
   }
 
   &__btn {
-    margin: 40px auto 0;
+    margin: 50px auto 0;
+    @include mq(md) {
+      margin-top: 20px;
+    }
   }
 }

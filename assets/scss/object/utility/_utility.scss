@@ -5,14 +5,14 @@
 -----------------------------------------*/
 
 //デスクトップのみ表示
-.u-onliy-pc {
+.u-only-pc {
   @include mq(md) {      
     display: none;
   }
 }
 
 //モバイルのみ表示
-.u-onliy-sp {
+.u-only-sp {
   display: none;
   @include mq(md) {
     display: block;
@@ -20,7 +20,7 @@
 }
 
 //lg以下サイズのみ表示
-.u-onliy-tbsp {
+.u-only-tbsp {
   display: none;
   @include mq(lg) {
     display: inline-block;

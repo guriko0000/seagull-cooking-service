@@ -65,7 +65,7 @@
     font-weight: $medium;
     letter-spacing: 0.03em;
     line-height: 1.5;
-    margin-top: 20px;
+    margin-top: 10px;
     @include mq(md) {
       font-size: 1.5rem;
       margin-top: 0;
@@ -79,6 +79,7 @@
     gap: 4px;
     font-size: 1.8rem;
     font-weight: $medium;
+    line-height: 1.4;
     letter-spacing: 0.03em;
     margin-top: 10px;
     @include mq(md) {
@@ -94,6 +95,7 @@
     font-family: $third-font-family;
     font-size: 5.4rem;
     font-weight: $bold;
+    line-height: 1;
     letter-spacing: 0.05em;
     @include mq(md) {
       font-size: 2.6rem;

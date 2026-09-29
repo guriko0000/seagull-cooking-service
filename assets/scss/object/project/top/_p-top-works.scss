@@ -4,24 +4,43 @@
         p-top-works
 -----------------------------------------*/
 .p-top-works {
-  
+  @include mq(md) {
+    padding: 50px 0;
+  }
 
   &__content {
     display: flex;
     flex-direction: column;
     gap: 48px;
     margin-top: 56px;
+    @include mq(md) {
+      gap: 20px;
+      margin-top: 30px;
+    }
   }
 
   &__feature {
     display: flex;
     border-radius: 12px;
     overflow: hidden;
+    @include mq(md) {
+      flex-direction: column;
+      border-radius: 8px;
+    }
   }
 
   &__feature-img {
     flex-shrink: 0;
     width: 480px;
+    width: 39.54%;
+    max-width: 480px;
+    @include mq(xxl) {
+      max-width: 380px;
+    }
+    @include mq(md) {
+      width: 100%;
+      max-width: 100%;
+    }
 
     img {
       width: 100%;
@@ -37,12 +56,22 @@
     gap: 25px;
     background-color: #fff;
     padding: 56px;
+    @include mq(xxl) {
+      padding: 50px 30px;
+    }
+    @include mq(md) {
+      gap: 10px;
+      padding: 20px;
+    }
   }
 
   &__feature-head {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    @include mq(md) {
+      display: contents;
+    }
   }
 
   &__case {
@@ -53,8 +82,12 @@
     font-family: $second-font-family;
     font-size: 1.4rem;
     font-weight: $medium;
+    line-height: 1.2;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    @include mq(md) {
+      font-size: 1.2rem;
+    }
 
     &::before {
       content: '';
@@ -64,34 +97,60 @@
       height: 8px;
       border-radius: 4px;
       background-color: #ffe500;
+      @include mq(md) {
+        display: none;
+      }
     }
   }
 
   &__feature-info {
     display: flex;
     gap: 60px;
+    @include mq(xxl) {
+      gap: 40px;
+    }
+    @include mq(md) {
+      display: contents;
+    }
   }
 
   &__feature-title-group {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    @include mq(md) {
+      gap: 10px;
+    }
   }
 
   &__feature-title {
     font-size: 2.8rem;
     font-weight: $bold;
+    line-height: 1.2;
+    @include mq(md) {
+      font-size: 2rem;
+      letter-spacing: 0.03em;
+    }
   }
 
   &__feature-meta {
     font-size: 1.8rem;
     font-weight: $medium;
+    line-height: 1.2;
     letter-spacing: 0.03em;
+    @include mq(md) {
+      font-size: 1.4rem;
+    }
   }
 
   &__feature-logo {
     flex-shrink: 0;
     width: 130px;
+    @include mq(md) {
+      order: 1;
+      width: 100px;
+      margin-top: 10px;
+    }
 
     img {
       width: 100%;
@@ -101,23 +160,58 @@
   &__feature-text {
     line-height: 1.5;
     letter-spacing: 0.03em;
+    @include mq(md) {
+      font-size: 1.5rem;
+      line-height: 1.7;
+      margin-top: 10px;
+    }
   }
 
   &__logos {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
     gap: 24px;
-    @include mq(xxl) {
-      gap: 12px;
+    overflow: hidden;
+    @include mq(md) {
+      display: block;
+    }
+  }
+
+  &__logo-track {
+    display: flex;
+    flex-shrink: 0;
+    gap: 24px;
+    animation: works-logo-marquee 40s linear infinite;
+    @include mq(md) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+      animation: none;
+    }
+
+    &--clone {
+      @include mq(md) {
+        display: none;
+      }
     }
   }
 
   &__logo {
+    flex-shrink: 0;
+    width: 180px;
     border-radius: 6px;
     overflow: hidden;
+    @include mq(md) {
+      width: auto;
+    }
 
     img {
       width: 100%;
     }
+  }
+}
+
+@keyframes works-logo-marquee {
+  to {
+    transform: translateX(calc(-100% - 24px));
   }
 }

@@ -5,15 +5,25 @@
 -----------------------------------------*/
 .l-footer {
 
+
   &__inner {
     max-width: 1240px;
-    padding: 80px 20px;
+    padding: 0 20px;
     margin: 0 auto;
+    @include mq(md) {
+      max-width: 640px;
+    }
   }
 
   &__content {
     display: flex;
     gap: 80px;
+    padding: 80px 0;
+    @include mq(md) {
+      flex-direction: column;
+      gap: 24px;
+      padding: 40px 0;
+    }
   }
 
   &__company {
@@ -23,6 +33,10 @@
   &__logo {
     display: block;
     max-width: 262px;
+    line-height: 1;
+    @include mq(md) {
+      max-width: 294px;
+    }
 
     img {
       width: 100%;
@@ -35,20 +49,37 @@
     line-height: 2;
     letter-spacing: 0.03em;
     margin-top: 20px;
+    @include mq(md) {
+      color: $color-black01;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      margin-top: 24px;
+    }
   }
 
   &__navs {
     display: flex;
     gap: 80px;
+    @include mq(md) {
+      flex-direction: column;
+      gap: 25px;
+    }
   }
 
   &__nav-title {
     font-weight: $bold;
+    line-height: 1.2;
     letter-spacing: 0.03em;
+    @include mq(md) {
+      font-size: 1.5rem;
+    }
   }
 
   &__nav-list {
     margin-top: 16px;
+    @include mq(md) {
+      margin-top: 15px;
+    }
   }
 
   &__nav-item {
@@ -70,9 +101,15 @@
     display: block;
     color: #787878;
     font-size: 1.3rem;
+    line-height: 1.2;
     letter-spacing: 0.03em;
     padding: 6px 0;
     transition: opacity 0.25s;
+    @include mq(md) {
+      color: $color-black01;
+      font-size: 1.3rem;
+      padding: 8px 0;
+    }
 
     &:hover, &:focus-visible {
       opacity: $hover-opacity;
@@ -82,6 +119,10 @@
   &__copyright {
     background-color: $color-black01;
     padding: 20px 0;
+    @include mq(md) {
+      background-color: $main-color;
+      padding: 18px 0;
+    }
   }
 
   &__copyright-text {
@@ -89,7 +130,12 @@
     font-family: $second-font-family;
     font-size: 1.2rem;
     font-weight: $medium;
+    line-height: 1.2;
     letter-spacing: 0.03em;
     text-align: center;
+    @include mq(md) {
+      font-size: 1rem;
+      font-weight: $regular;
+    }
   }
 }

@@ -64,6 +64,7 @@
   &__title {
     display: inline;
     background: linear-gradient($main-color 0 0) var(--p, 0) 100% /var(--d, 0) 1px no-repeat;
+    line-height: 1.5;
     transition: 0.3s, background-position 0s 0.3s;
     margin-top: 5px;
     @include mq(md) {

@@ -17,8 +17,12 @@
   font-weight: $bold;
   line-height: 1.2;
   letter-spacing: 0.03em;
-  padding: 20px 44px;
+  padding: 20px 40px 20px 15px;
   transition: 0.25s;
+  @include mq(md) {
+    max-width: 280px;
+    font-size: 1.5rem;
+  }
 
   &::after {
     content: '';
@@ -34,6 +38,9 @@
     background-size: contain;
     background-repeat: no-repeat;
     transition: background-color 0.25s;
+    @include mq(md) {
+      display: none;
+    }
   }
 
   &:hover, &:focus-visible {

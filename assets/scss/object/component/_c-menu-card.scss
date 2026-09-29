@@ -4,9 +4,16 @@
         c-menu-card
 -----------------------------------------*/
 .c-menu-card {
+  display: flex;
+  flex-direction: column;
   border-radius: 10px;
   box-shadow: 0 6px 10px rgba(20, 18, 10, 0.07);
   overflow: hidden;
+  @include mq(md) {
+    gap: 8px;
+    border-radius: 0;
+    box-shadow: none;
+  }
 
   &__img {
 
@@ -16,8 +23,13 @@
   }
 
   &__body {
+    flex: 1;
     background-color: $main-bg;
     padding: 15px 20px;
+    @include mq(md) {
+      background-color: transparent;
+      padding: 0;
+    }
   }
 
   &__title {
@@ -25,5 +37,10 @@
     line-height: 1.7;
     letter-spacing: 0.03em;
     text-align: center;
+    @include mq(md) {
+      font-size: 1.4rem;
+      line-height: 1.2;
+      text-align: left;
+    }
   }
 }

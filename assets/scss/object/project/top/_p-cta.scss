@@ -8,11 +8,18 @@
   color: #fff;
   text-align: center;
   padding: 120px 0;
+  @include mq(md) {
+    border-radius: 8px;
+    padding: 56px 20px;
+  }
 
   &__title {
     font-size: 3.4rem;
     font-weight: $bold;
     line-height: 1.2;
+    @include mq(md) {
+      font-size: 2.4rem;
+    }
 
     &::after {
       content: '';
@@ -22,6 +29,9 @@
       border-radius: 1.5px;
       background-color: #ffe500;
       margin: 14px auto 0;
+      @include mq(md) {
+        display: none;
+      }
     }
   }
 
@@ -30,9 +40,17 @@
     line-height: 2;
     letter-spacing: 0.03em;
     margin-top: 40px;
+    @include mq(md) {
+      font-size: 1.5rem;
+      line-height: 1.8;
+      margin-top: 20px;
+    }
   }
 
   &__btn {
     margin: 40px auto 0;
+    @include mq(md) {
+      margin-top: 20px;
+    }
   }
 }

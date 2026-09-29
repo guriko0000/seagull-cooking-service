@@ -6,7 +6,6 @@
 .c-cta-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
   position: relative;
   width: 100%;
   max-width: 300px;
@@ -17,20 +16,10 @@
   font-weight: $bold;
   line-height: 1.2;
   letter-spacing: 0.03em;
-  padding: 20px 44px 20px 30px;
+  padding: 19px 40px 19px 25px;
   transition: 0.25s;
-
-  &::before {
-    content: '';
-    display: block;
-    flex-shrink: 0;
-    width: 21px;
-    height: 21px;
-    background-color: $color-black01;
-    mask: url(../img/icon/icon_cutlery.svg) no-repeat center/cover;
-    background-size: contain;
-    background-repeat: no-repeat;
-    transition: background-color 0.25s;
+  @include mq(md) {
+    padding: 17px 40px 17px 30px;
   }
 
   &::after {
@@ -50,11 +39,34 @@
   }
 
   &:hover, &:focus-visible {
-    background-color: transparent;
+    background-color: $color-black01;
     color: $main-bg;
 
-    &::before, &::after {
+    &::after {
       background-color: $main-bg;
+    }
+
+    .c-cta-btn__text::before {
+      background-color: $main-bg;
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &::before {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      width: 21px;
+      height: 21px;
+      background-color: $color-black01;
+      mask: url(../img/icon/icon_cutlery.svg) no-repeat center/cover;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: background-color 0.25s;
     }
   }
 }

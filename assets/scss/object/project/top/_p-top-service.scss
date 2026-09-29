@@ -107,6 +107,7 @@
   &__main-title {
     font-size: 2.6rem;
     font-weight: $bold;
+    line-height: 1.5;
     letter-spacing: 0.05em;
     @include mq(md) {
       font-size: 1.9rem;
@@ -117,7 +118,7 @@
   &__main-text {
     line-height: 1.9;
     letter-spacing: 0.03em;
-    margin-top: 30px;
+    margin-top: 20px;
     @include mq(md) {
       font-size: 1.5rem;
       line-height: 1.7;
@@ -188,6 +189,10 @@
       border-radius: 50%;
       background-color: $accent-color;
       transition: transform 0.25s;
+      @include mq(md) {
+        width: 34px;
+        height: 34px;
+      }
     }
 
     &::after {
@@ -234,13 +239,20 @@
     align-items: center;
     font-size: 2rem;
     font-weight: $bold;
+    line-height: 1.5;
     letter-spacing: 0.03em;
+    @include mq(md) {
+      font-size: 1.9rem;
+    }
   }
 
   &__card-text {
     line-height: 1.8;
     letter-spacing: 0.03em;
     margin-top: 12px;
+    @include mq(md) {
+      font-size: 1.5rem;
+    }
   }
 
   &__badge {

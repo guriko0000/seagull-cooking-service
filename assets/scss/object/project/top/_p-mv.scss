@@ -6,7 +6,7 @@
 .p-mv {
   position: relative;
   background-color: $main-bg;
-  padding: 60px 0;
+  padding: 60px 0 80px;
   overflow: hidden;
   @include mq(lg) {
     padding: 24px 0 50px;
@@ -28,6 +28,7 @@
     margin-right: auto;
     margin-left: auto;
     @include mq(md) {
+      max-width: 600px;
       padding: 0 20px;
     }
   }
@@ -48,12 +49,14 @@
     flex-shrink: 0;
     padding: 50px 0 50px 50px;
     z-index: 1;
+    margin-top: 20px;
     @media screen and (max-width: 1500px){
       padding: 50px 0;
     }
     @include mq(lg) {
       flex: 1;
       padding: 0;
+      margin-top: 0;
     }
 
     &::before {
@@ -65,8 +68,13 @@
       aspect-ratio: 1;
       background: url("/assets/img/top/mv_circle-text.png") center / contain no-repeat;
       z-index: -1;
+      @include mq(xl) {
+        top: -80px;
+        left: -340px;
+      }
       @include mq(lg) {
         width: 400px;
+        top: -20px;
         left: 150px;
       }
       @include mq(md) {
@@ -81,6 +89,7 @@
     font-family: $second-font-family;
     font-size: 1.6rem;
     font-weight: $medium;
+    line-height: 1.2;
     letter-spacing: 0.03em;
     @include mq(md) {
       font-size: 1.2rem;
@@ -163,7 +172,7 @@
   &__scroll {
     position: absolute;
     left: 50%;
-    bottom: 42px;
+    bottom: 60px;
     transform: translateX(-50%);
     color: #777;
     font-family: $second-font-family;
