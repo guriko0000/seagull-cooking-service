@@ -39,6 +39,7 @@
     display: flex;
     align-items: center;
     min-width: 0;
+    margin-right: 20px;
   }
 
   &__logo a {
@@ -59,7 +60,7 @@
     width: 100%;
     line-height: 1;
     @include mq(md) {
-      max-width: 266px;
+      max-width: 263px;
       margin-right: 20px;
     }
   }
@@ -71,11 +72,15 @@
 
   &__container {
     display: flex;
-    flex-shrink: 0;
+    // flex-shrink: 0;
     align-items: center;
     gap: 28px;
     @include mq(header) {
       display: none;
+    }
+
+    .c-header-btn {
+      width: 249px;
     }
   }
 
@@ -95,19 +100,20 @@
     font-weight: $bold;
     letter-spacing: 0.03em;
     white-space: nowrap;
+    line-height: 1.4;
     transition: 0.25s;
 
     &::before {
       content: '';
       display: block;
       flex-shrink: 0;
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       background-color: $color-black01;
       mask: url(../img/icon/icon_phone.svg) no-repeat center/cover;
       background-size: contain;
       background-repeat: no-repeat;
-      // transform: rotate(15deg);
+      transform: translateY(-1px) rotate(-5deg);
     }
 
     &:hover, &:focus-visible {
@@ -119,6 +125,7 @@
     color: #555;
     font-size: 1.4rem;
     letter-spacing: 0.03em;
+    line-height: 1;
     white-space: nowrap;
   }
 }
@@ -221,13 +228,9 @@
     flex-direction: column;
     position: relative;
     min-height: 100%;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 25px;
     z-index: 30;
-  }
-
-  &__item {
-    border-bottom: 1px solid #ddd;
   }
 
   &__label {
@@ -236,7 +239,9 @@
     gap: 8px;
     position: relative;
     width: 100%;
+    border-bottom: 1px solid #ddd;
     font-weight: $medium;
+    line-height: 1.4;
     letter-spacing: 0.03em;
     text-align: left;
     padding: 20px 0;
@@ -280,8 +285,9 @@
     gap: 8px;
     position: relative;
     font-size: 1.5rem;
+    line-height: 1.2;
     letter-spacing: 0.03em;
-    padding: 16px 20px 16px 18px;
+    padding: 15px 20px 15px 18px;
 
     &::after {
       content: '';
@@ -304,8 +310,9 @@
     background-color: $accent-color;
     font-size: 1.3rem;
     font-weight: $bold;
+    line-height: 1.3;
     letter-spacing: 0.03em;
-    padding: 4px 8px;
+    padding: 3px 8px;
   }
 
   &__cta {
@@ -367,7 +374,7 @@
   .c-hamburger-btn__line {
     &:nth-of-type(1) {
       top: 50%;
-      transform: translateY(-50%) rotate(45deg);
+      transform: translateY(-50%) rotate(30deg);
     }
     &:nth-of-type(2) {
       width: 0;
@@ -376,7 +383,7 @@
     &:nth-of-type(3) {
       width: 100%;
       bottom: 50%;
-      transform: translateY(50%) rotate(-45deg);
+      transform: translateY(50%) rotate(-30deg);
     }
   }
 
