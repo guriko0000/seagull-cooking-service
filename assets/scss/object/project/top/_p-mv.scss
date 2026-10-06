@@ -67,6 +67,7 @@
       width: 610px;
       aspect-ratio: 1;
       background: url("/assets/img/top/mv_circle-text.png") center / contain no-repeat;
+      animation: mv-circle-rotate 20s linear infinite;
       z-index: -1;
       @include mq(xl) {
         top: -80px;
@@ -207,5 +208,11 @@
   100% {
     transform: scaleY(1);
     transform-origin: top;
+  }
+}
+
+@keyframes mv-circle-rotate {
+  to {
+    transform: rotate(360deg);
   }
 }
